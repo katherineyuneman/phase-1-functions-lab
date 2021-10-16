@@ -1,10 +1,9 @@
 
 //distance from HQ in BLOCKS
 
-const start = 34;
-const destination = 55;
-console.log(`Starting Block: ${start} Street`);
-console.log(`Destination Block: ${destination} Street`);
+
+//console.log(`Starting Block: ${start} Street`);
+//console.log(`Destination Block: ${destination} Street`);
 
 function distanceFromHqInBlocks(start){
    if (start >= 42){
@@ -14,14 +13,14 @@ function distanceFromHqInBlocks(start){
     }
 }
 
-const returnDistanceBlocks = console.log("Distance from HQ in Blocks:", distanceFromHqInBlocks(start));
+console.log("Distance from HQ in Blocks:", distanceFromHqInBlocks(start));
 
 // distance from HQ in FEET
 
-function distanceFromHqInFeet(){
+function distanceFromHqInFeet(start){
     let blocks = distanceFromHqInBlocks(start);
     return (blocks * 264);
-}
+    }
 console.log("Distance from HQ in Feet:",distanceFromHqInFeet());
 
 //distance travelled in FEET
@@ -37,9 +36,10 @@ console.log("Distance Traveled in Feet:",distanceTravelledInFeet(start,destinati
 
 // fare price calculation
 
-let distanceFeet = distanceTravelledInFeet(start, destination);
+ 
 
-function calculatesFarePrice(start,destination){
+function calculatesFarePrice(start, destination){
+    let distanceFeet = distanceTravelledInFeet(start,destination);
     if (distanceFeet <= 400){
         return 0;
     }
@@ -54,4 +54,4 @@ function calculatesFarePrice(start,destination){
         return 'cannot travel that far'
     }
 }
-console.log("Fare Price:",calculatesFarePrice(start,destination));
+console.log("Fare Price:",calculatesFarePrice(start, destination));
